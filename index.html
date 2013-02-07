@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>i.dluciv.name</title>
+    <title>Дмитрий Вадимович Луцив</title>
 
     <link rel="openid.server" href="http://openid.yandex.ru/server/" />
     <link rel="openid2.provider" href="http://openid.yandex.ru/server/" />
@@ -20,8 +20,23 @@
     <![endif]-->
   </head>
   <body>
-    <p>Перейти на <a href="http://dluciv.name">домашнюю страницу</a></p>
+    <p>Данная страница сделана для поддержки OpenID <a href="http://i.dluciv.name/">http://i.dluciv.name/</a>.</p>
+    <p>Перейти на <a href="http://dluciv.name/">домашнюю страницу</a>: <span id="counter">7</span> c...</p>
     <p>Большое спасибо <a href="http://myopenid.com/">MyOpenID</a> за работу удовлетворительного качества с осени 2008 года по конец 2012 года.</p>
+
+    <script type="text/javascript">
+      //<!--
+      var intervalId = setInterval(function countdown() {
+        var i = document.getElementById('counter');
+        if (parseInt(i.innerHTML)<=0) {
+          clearInterval(intervalId);
+          location.href = 'http://dluciv.name/';
+        }
+        else
+          i.innerHTML = parseInt(i.innerHTML)-1;
+      }, 1000);
+      //-->
+    </script>
 
     <p>
       <a href="http://validator.w3.org/check?uri=referer"><img
